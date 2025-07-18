@@ -2,47 +2,43 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        DisplayWelcomeMessage();
-
-        string userName = PromptUserName();
-        int userNumber = PromptUserNumber();
-
-        int squaredNumber = SquareNumber(userNumber);
-
-        DisplayResult(userName, squaredNumber);
-    }
-
-    static void DisplayWelcomeMessage()
-    {
-        Console.WriteLine("Welcome to the program!");
-    }
-
     static string PromptUserName()
     {
-        Console.Write("Please enter your name: ");
-        string name = Console.ReadLine();
-
-        return name;
+        Console.Write("Enter your name: ");
+        string input = Console.ReadLine();
+        return input; 
     }
 
     static int PromptUserNumber()
     {
         Console.Write("Please enter your favorite number: ");
-        int number = int.Parse(Console.ReadLine());
-
-        return number;
+        string num = Console.ReadLine();
+        int inputNum = int.Parse(num);
+        
+        return inputNum;
     }
 
-    static int SquareNumber(int number)
+    static int SquareNumber(int inputNum)
     {
-        int square = number * number;
-        return square;
+
+        int Square = (inputNum * inputNum);
+
+        return Square;
     }
 
-    static void DisplayResult(string name, int square)
+
+    static void Main(string[] args)
     {
-        Console.WriteLine($"{name}, the square of your number is {square}");
+        string name = PromptUserName();
+        
+
+        int number = PromptUserNumber();
+        
+
+        int square = SquareNumber(number);
+        
+
+        Console.Write($"{name}, the square of your number is {square}");
+
     }
 }

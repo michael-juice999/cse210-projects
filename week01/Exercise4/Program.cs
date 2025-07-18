@@ -6,42 +6,36 @@ class Program
     {
         List<int> numbers = new List<int>();
 
-        int userNumber = -1;
-        while (userNumber != 0)
+        Console.Write("Enter a list of numbers, type 0 when finished: ");
+
+        // numbers.Add(number);
+        // Console.Write(numbers);
+        // int outPut = Console.Read();
+
+        while (true)
         {
-            Console.Write("Enter a number (0 to quit): ");
+            Console.WriteLine("Enter number: ");
+            string num = Console.ReadLine();
+            int number = int.Parse(num);
 
-            string userResponse = Console.ReadLine();
-            userNumber = int.Parse(userResponse);
-
-            if (userNumber != 0)
+            if (number == 0)
             {
-                numbers.Add(userNumber);
+                break;
             }
-        }
 
-        int sum = 0;
-        foreach (int number in numbers)
-        {
-            sum += number;
-        }
-
-        Console.WriteLine($"The sum is: {sum}");
-
-        float average = ((float)sum) / numbers.Count;
-        Console.WriteLine($"The average is: {average}");
-
-        int max = numbers[0];
-
-        foreach (int number in numbers)
-        {
-            if (number > max)
+            else if (number != 0)
             {
-                
-                max = number;
+                numbers.Add(number);
+                Console.Write(numbers);
+                int outPut = Console.Read();
             }
+
+            
+
+            
+
         }
 
-        Console.WriteLine($"The max is: {max}");
+        
     }
 }
